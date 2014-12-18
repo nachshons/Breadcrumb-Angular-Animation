@@ -1,0 +1,35 @@
+
+.card {
+    padding: 50px 80px;
+    text-align:center;
+    vertical-align:middle;
+    background: #F0F0F0;
+    overflow: hidden;
+    display: inline-block;
+    margin:4px;
+    font-size: 5em;
+    border: 1px solid #E0E0E0;
+}
+
+.moo.ng-enter {
+	-webkit-animation: bounceInDown 0.4;
+
+}
+
+/*.moo.ng-enter.moo.ng-enter-active {
+	opacity: 1;
+}*/
+
+
+.moo.ng-leave {
+	-webkit-animation: bounceOut 1s;
+}
+
+/*.moo.ng-leave.moo.ng-leave-active {
+	opacity: 0;
+}*/
+
+.view.ng-enter {
+		-webkit-animation: fadeInLeft 1s;
+}
+

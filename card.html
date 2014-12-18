@@ -1,0 +1,5 @@
+<h2>Current card is {{ value }}</h2>
+<button ng-click="list.push({number:'4'})">Boo</button>
+<div ng-repeat="count in list" class="card moo">
+	<a ng-href="{{ addToLocation(count.number) }}">{{count.number}}</a>
+</div>
