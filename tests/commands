@@ -1,0 +1,6 @@
+webdriver-manager start
+cd "c:\My Files\Development\Breadcrumb App"
+protractor conf.js --suite basic
+protractor conf.js --suite pageObject
+protractor conf.js --suite multiWindow
+protractor conf.js --suite wait

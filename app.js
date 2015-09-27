@@ -4,11 +4,25 @@ var app = angular.module("app", ["ngRoute", "ngAnimate"]);
 
 app.controller("c1", function($rootScope, $scope,$timeout) {
     $scope.value = $rootScope.data.value[$rootScope.data.value.length - 1];
-	$timeout(function() {
-		$scope.list = [{number: "1"}, {number: "2"}, {number: "3"}];
-	}, 1);
-
-	$scope.moo =[{n:1, m:2}, {n:3,m:4}];
+	
+	$scope.list = [];
+	
+	$scope.max = +$scope.value;
+	
+	$scope.add = function () {
+		$scope.max += 1;
+		$scope.list.push({ number: $scope.max });
+	}
+	
+	setTimeout(function () {
+		$scope.hey = true;
+		$scope.$apply();
+	}, 9000);
+	
+	for (var i = 1; i <= $scope.value; i++) {
+		$scope.list.push({number: i});
+	}
+	
 });
 
 app.directive("breadcrumb", function() {
@@ -19,11 +33,11 @@ app.directive("breadcrumb", function() {
 });
 
 app.config(function($routeProvider) {
-    $routeProvider.when('/Z/:ids', {
+    $routeProvider.when('/:ids', {
         templateUrl: 'card.html',
         controller: "c1"
     });
-    $routeProvider.otherwise({redirectTo: "/Z/1"});
+    $routeProvider.otherwise({redirectTo: "/9"});
 });
 
 app.run(function ($rootScope, $location) {
@@ -33,16 +47,22 @@ app.run(function ($rootScope, $location) {
     };
 
     $rootScope.linkToBreadcrumb = function(index, list) {
-        var returnVal = "#/Z/"
+        var returnVal = "#/"
         for (var i=0; i<index; i++) {
             returnVal += list[i] + "-";
         }
         returnVal += list[index]
         return returnVal;
     };
+	
+	$rootScope.home = function () {
+		$location.path("");
+	}
 
     $rootScope.$on('$routeChangeStart', function(scope, next, current){
-        $rootScope.data.value = next.params.ids.split("-");
+        if (next.params.ids) {
+			$rootScope.data.value = next.params.ids.split("-");
+		}
     });
 });
 

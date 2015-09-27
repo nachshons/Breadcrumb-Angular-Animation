@@ -1,5 +1,13 @@
-<h2>Current card is {{ value }}</h2>
-<button ng-click="list.push({number:'4'})">Boo</button>
+<h2>
+	Current card is {{ value }}
+	
+</h2>
+
+<div class="hey alert alert-warning" ng-if="hey">You've been on this page for a while, you should choose a card</div>
 <div ng-repeat="count in list" class="card moo">
 	<a ng-href="{{ addToLocation(count.number) }}">{{count.number}}</a>
+</div>
+
+<div class="card plus-card moo" ng-click="add()">
+	<span>+</span>
 </div>

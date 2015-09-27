@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
   <li ng-repeat="id in data.value track by $index" class="moo" ng-class="{active: $last}">
-      <a ng-href="{{linkToBreadcrumb($index, data.value)}}" ng-show="!$last">Card {{ id }}</a>
-      <span ng-show="$last">Card {{ id }}</span>
+      <a ng-href="{{linkToBreadcrumb($index, data.value)}}" ng-if="!$last">Card {{ id }}</a>
+      <span ng-if="$last">Card {{ id }}</span>
     </li>
 </ol>
