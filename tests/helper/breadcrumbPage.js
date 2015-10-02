@@ -46,6 +46,10 @@ function BreadcrumbPage (browser) {
 	this.getPageTitle = function () {
 		return browser.$("h2").getText()
 	}
+
+	this.close = function () {
+		browser.close();
+	}
 }
 
 module.exports = BreadcrumbPage;

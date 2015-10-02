@@ -3,7 +3,7 @@ exports.config = {
 	capabilities: { 'browserName': 'chrome' },
 	framework: 'jasmine2',
 	directConnect: true,
-	specs: ['tests/*.js'],
+	//specs: ['tests/*.js'],
 	suites: {
 		basic: 'tests/basic.js',
 		pageObject: 'tests/pageObjects.js',

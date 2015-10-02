@@ -1,6 +1,6 @@
 var BreadcrumbPage = require("../tests/helper/breadcrumbPage.js");
 
-browser.get("http://127.0.0.1:53128/index.html");
+browser.get("http://127.0.0.1:60105/index.html");
 
 var breadcrumbPage = new BreadcrumbPage(browser);
 

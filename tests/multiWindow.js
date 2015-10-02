@@ -1,6 +1,6 @@
 var BreadcrumbPage = require("../tests/helper/breadcrumbPage.js");
 
-browser.get("http://127.0.0.1:53128/index.html");
+browser.get("http://127.0.0.1:60105/index.html");
 
 var firstPage = new BreadcrumbPage(browser);
 var secondPage = new BreadcrumbPage(browser.forkNewDriverInstance(true, true));
@@ -35,5 +35,7 @@ describe("page tests", function () {
 			.clickOnCardByIndex(3);
 		
 		expect(firstPage.getPageTitle()).toBe(secondPage.getPageTitle());
+
+		secondPage.close();
 	});
 })

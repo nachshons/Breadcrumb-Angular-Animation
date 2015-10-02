@@ -1,4 +1,4 @@
-browser.get("http://127.0.0.1:53128/index.html");
+browser.get("http://127.0.0.1:60105/index.html");
 
 describe("basic app tests", function () {
 	var breadcrumbs = $$(".breadcrumb li *");
@@ -30,7 +30,8 @@ describe("basic app tests", function () {
 	
 	
 	it("check that card breadcrumb", function () {
-		$(".logo").click();
+		// TODO: Explain setLocation vs. get
+		browser.setLocation("/1");
 		
 		$$(".card a").get(0).click();
 		$$(".card a").get(0).click();
